@@ -59,7 +59,7 @@ FROM customers
 
 Q6) The ER diagram below is depicting what kind of relationship between the EMPLOYEES and CUSTOMERS tables?
 
-<img src="images/ChinookDatabaseSch.png">
+https://github.com/KevinVChin/Learn-SQL-Basics-for-Data-Science/blob/main/1-SQL_for_Data_Science/1-Module/3-Review/images/ChinookDatabaseSch.png
 
 A6) One-to-many
 
@@ -69,7 +69,7 @@ A6) One-to-many
 
 Q7) The data model depicted in the ER diagram below could be described as a _______________.
 
-<img="images/ChinookDatabaseSch.png">
+https://github.com/KevinVChin/Learn-SQL-Basics-for-Data-Science/blob/main/1-SQL_for_Data_Science/1-Module/3-Review/images/ChinookDatabaseSch.png
 
 A7) Relational Model
 
