@@ -2,7 +2,7 @@ All of the questions in this quiz refer to the open source Chinook Database. Ple
 
 https://ucde-rey.s3.amazonaws.com/DSV1015/ChinookDatabaseSchema.png
 
-<img src="images/ChinookDatabaseSchema.png">
+https://github.com/KevinVChin/Learn-SQL-Basics-for-Data-Science/blob/main/1-SQL_for_Data_Science/3-Module/2-Review_and_Practice/images/ChinookDatabaseSchema.png
 
 
 Q1) Using a subquery, find the names of all the tracks for the album "Californication".
@@ -75,19 +75,19 @@ SQL Output:
 +-----------------------+---------------------+-------------------------------+---------------+
 | FullName              | City                | Email                         | NumOfInvoices |
 +-----------------------+---------------------+-------------------------------+---------------+
-| LuÌs GonÁalves        | S„o JosÈ dos Campos | luisg@embraer.com.br          |             7 |
-| Leonie Kˆhler         | Stuttgart           | leonekohler@surfeu.de         |             7 |
-| FranÁois Tremblay     | MontrÈal            | ftremblay@gmail.com           |             7 |
-| Bj¯rn Hansen          | Oslo                | bjorn.hansen@yahoo.no         |             7 |
-| Frantiöek Wichterlov· | Prague              | frantisekw@jetbrains.com      |             7 |
-| Helena Hol˝           | Prague              | hholy@gmail.com               |             7 |
+| Lu√≠s Gon√ßalves        | S√£o Jos√© dos Campos | luisg@embraer.com.br          |             7 |
+| Leonie K√∂hler         | Stuttgart           | leonekohler@surfeu.de         |             7 |
+| Fran√ßois Tremblay     | Montr√©al            | ftremblay@gmail.com           |             7 |
+| Bj√∏rn Hansen          | Oslo                | bjorn.hansen@yahoo.no         |             7 |
+| Franti≈°ek Wichterlov√° | Prague              | frantisekw@jetbrains.com      |             7 |
+| Helena Hol√Ω           | Prague              | hholy@gmail.com               |             7 |
 | Astrid Gruber         | Vienne              | astrid.gruber@apple.at        |             7 |
 | Daan Peeters          | Brussels            | daan_peeters@apple.be         |             7 |
 | Kara Nielsen          | Copenhagen          | kara.nielsen@jubii.dk         |             7 |
-| Eduardo Martins       | S„o Paulo           | eduardo@woodstock.com.br      |             7 |
-| Alexandre Rocha       | S„o Paulo           | alero@uol.com.br              |             7 |
+| Eduardo Martins       | S√£o Paulo           | eduardo@woodstock.com.br      |             7 |
+| Alexandre Rocha       | S√£o Paulo           | alero@uol.com.br              |             7 |
 | Roberto Almeida       | Rio de Janeiro      | roberto.almeida@riotur.gov.br |             7 |
-| Fernanda Ramos        | BrasÌlia            | fernadaramos4@uol.com.br      |             7 |
+| Fernanda Ramos        | Bras√≠lia            | fernadaramos4@uol.com.br      |             7 |
 | Mark Philips          | Edmonton            | mphilips12@shaw.ca            |             7 |
 | Jennifer Peterson     | Vancouver           | jenniferp@rogers.ca           |             7 |
 | Frank Harris          | Mountain View       | fharris@google.com            |             7 |
@@ -104,9 +104,9 @@ SQL Output:
 (Output limit exceeded, 25 of 59 total rows shown)
 
 
-After running the query described above, what is the correct customer information for the 5th person, Frantiöek Wichterlov·? Select the answer below.
+After running the query described above, what is the correct customer information for the 5th person, Franti≈°ek Wichterlov√°? Select the answer below.
 
-A2) Frantiöek, Wichterlov·, Prague, frantisekw@jetbrains.com
+A2) Franti≈°ek, Wichterlov√°, Prague, frantisekw@jetbrains.com
 
 
 
@@ -221,29 +221,29 @@ SQL Output:
 +------------------------------------------------------+----------+
 | Milton Nascimento & Bebeto                           |       25 |
 | Azymuth                                              |       26 |
-| Jo„o Gilberto                                        |       28 |
+| Jo√£o Gilberto                                        |       28 |
 | Bebel Gilberto                                       |       29 |
 | Jorge Vercilo                                        |       30 |
 | Baby Consuelo                                        |       31 |
 | Ney Matogrosso                                       |       32 |
 | Luiz Melodia                                         |       33 |
 | Nando Reis                                           |       34 |
-| Pedro LuÌs & A Parede                                |       35 |
+| Pedro Lu√≠s & A Parede                                |       35 |
 | Banda Black Rio                                      |       38 |
 | Fernanda Porto                                       |       39 |
 | Os Cariocas                                          |       40 |
 | A Cor Do Som                                         |       43 |
 | Kid Abelha                                           |       44 |
-| Sandra De S·                                         |       45 |
+| Sandra De S√°                                         |       45 |
 | Hermeto Pascoal                                      |       47 |
-| Bar„o Vermelho                                       |       48 |
+| Bar√£o Vermelho                                       |       48 |
 | Edson, DJ Marky & DJ Patife Featuring Fernanda Porto |       49 |
 | Santana Feat. Dave Matthews                          |       60 |
 | Santana Feat. Everlast                               |       61 |
 | Santana Feat. Rob Thomas                             |       62 |
 | Santana Feat. Lauryn Hill & Cee-Lo                   |       63 |
 | Santana Feat. The Project G&B                        |       64 |
-| Santana Feat. Man·                                   |       65 |
+| Santana Feat. Man√°                                   |       65 |
 +------------------------------------------------------+----------+
 (Output limit exceeded, 25 of 71 total rows shown)
 
@@ -283,10 +283,10 @@ SQL Output:
 | FirstName | LastName     |
 +-----------+--------------+
 | Fynn      | Zimmermann   |
-| Stanislaw | WÛjcik       |
-| Frantiöek | Wichterlov·  |
+| Stanislaw | W√≥jcik       |
+| Franti≈°ek | Wichterlov√°  |
 | Johannes  | Van der Berg |
-| FranÁois  | Tremblay     |
+| Fran√ßois  | Tremblay     |
 | Mark      | Taylor       |
 | Ellie     | Sullivan     |
 | Victor    | Stevens      |
