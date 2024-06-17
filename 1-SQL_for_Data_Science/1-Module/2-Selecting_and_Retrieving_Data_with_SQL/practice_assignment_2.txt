@@ -1,0 +1,458 @@
+Dear Learners,
+
+As part of your upcoming graded quiz, you will be tested on the execution of SQL queries, interpretation of the results, and selection of correct answers based on the data you uncover. Here's a step-by-step guide to help you prepare:
+
+Understand the Task: We'll provide you with a SQL script, which is a query you'll need to execute. This is much like a puzzle where the script is your tool to find the answer.
+
+Practice Makes Perfect: Before the quiz, we encourage you to try executing these queries. Think of this as your practice sandbox. The script we've given you is a basic 'SELECT' statement. If you're new to SQL, start here and get comfortable with how it works.
+
+Read and Interpret: After running the script, you'll get a set of results. Your task is to read and interpret these results correctly.
+
+Find the Answer: The correct answer to the quiz question will be found within these results. Your job is to find it and select it.
+
+To sum it up, your preparation for the quiz should include practicing running SQL queries, interpreting the output, and finding the correct answer from the results. This will not only help you ace the quiz, but also equip you with valuable SQL skills.
+
+Keep practicing, and you'll get the hang of it in no time!
+
+P.S. Don’t forget to hit the “run” button so the table appears :) 
+
+
+
+
+
+Q1) Run query: Retrieve all the data from the tracks table. Who is the composer for track 18?
+
+SQL Query:
+
+Select *
+From Tracks;
+
+
+SQL Output:
+
++---------+-----------------------------------------+---------+-------------+---------+------------------------------------------------------------------------+--------------+----------+-----------+
+| TrackId | Name                                    | AlbumId | MediaTypeId | GenreId | Composer                                                               | Milliseconds |    Bytes | UnitPrice |
++---------+-----------------------------------------+---------+-------------+---------+------------------------------------------------------------------------+--------------+----------+-----------+
+|       1 | For Those About To Rock (We Salute You) |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       343719 | 11170334 |      0.99 |
+|       2 | Balls to the Wall                       |       2 |           2 |       1 | None                                                                   |       342562 |  5510424 |      0.99 |
+|       3 | Fast As a Shark                         |       3 |           2 |       1 | F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman                    |       230619 |  3990994 |      0.99 |
+|       4 | Restless and Wild                       |       3 |           2 |       1 | F. Baltes, R.A. Smith-Diesel, S. Kaufman, U. Dirkscneider & W. Hoffman |       252051 |  4331779 |      0.99 |
+|       5 | Princess of the Dawn                    |       3 |           2 |       1 | Deaffy & R.A. Smith-Diesel                                             |       375418 |  6290521 |      0.99 |
+|       6 | Put The Finger On You                   |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       205662 |  6713451 |      0.99 |
+|       7 | Let's Get It Up                         |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       233926 |  7636561 |      0.99 |
+|       8 | Inject The Venom                        |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       210834 |  6852860 |      0.99 |
+|       9 | Snowballed                              |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       203102 |  6599424 |      0.99 |
+|      10 | Evil Walks                              |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       263497 |  8611245 |      0.99 |
+|      11 | C.O.D.                                  |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       199836 |  6566314 |      0.99 |
+|      12 | Breaking The Rules                      |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       263288 |  8596840 |      0.99 |
+|      13 | Night Of The Long Knives                |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       205688 |  6706347 |      0.99 |
+|      14 | Spellbound                              |       1 |           1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |       270863 |  8817038 |      0.99 |
+|      15 | Go Down                                 |       4 |           1 |       1 | AC/DC                                                                  |       331180 | 10847611 |      0.99 |
+|      16 | Dog Eat Dog                             |       4 |           1 |       1 | AC/DC                                                                  |       215196 |  7032162 |      0.99 |
+|      17 | Let There Be Rock                       |       4 |           1 |       1 | AC/DC                                                                  |       366654 | 12021261 |      0.99 |
+|      18 | Bad Boy Boogie                          |       4 |           1 |       1 | AC/DC                                                                  |       267728 |  8776140 |      0.99 |
+|      19 | Problem Child                           |       4 |           1 |       1 | AC/DC                                                                  |       325041 | 10617116 |      0.99 |
+|      20 | Overdose                                |       4 |           1 |       1 | AC/DC                                                                  |       369319 | 12066294 |      0.99 |
+|      21 | Hell Ain't A Bad Place To Be            |       4 |           1 |       1 | AC/DC                                                                  |       254380 |  8331286 |      0.99 |
+|      22 | Whole Lotta Rosie                       |       4 |           1 |       1 | AC/DC                                                                  |       323761 | 10547154 |      0.99 |
+|      23 | Walk On Water                           |       5 |           1 |       1 | Steven Tyler, Joe Perry, Jack Blades, Tommy Shaw                       |       295680 |  9719579 |      0.99 |
+|      24 | Love In An Elevator                     |       5 |           1 |       1 | Steven Tyler, Joe Perry                                                |       321828 | 10552051 |      0.99 |
+|      25 | Rag Doll                                |       5 |           1 |       1 | Steven Tyler, Joe Perry, Jim Vallance, Holly Knight                    |       264698 |  8675345 |      0.99 |
++---------+-----------------------------------------+---------+-------------+---------+------------------------------------------------------------------------+--------------+----------+-----------+
+(Output limit exceeded, 25 of 3503 total rows shown)
+
+
+A1) Bad Boy Boogie
+
+Feedback
+AC/DC is the composer for track 18.
+
+A simple select statement is the foundation to almost all queries. You should be able to write this in your sleep. The only way to get comfortable writing these statements is practice writing them until it comes naturally.
+
+
+
+
+
+Q2) Run Query: Retrieve all data from the artists table. Look at the list of artists, how many artists are you familiar with (there is no wrong answer here)?
+
+SQL Query:
+
+Select *
+From Artists;
+
+
+SQL Output:
+
++----------+---------------------------------+
+| ArtistId | Name                            |
++----------+---------------------------------+
+|        1 | AC/DC                           |
+|        2 | Accept                          |
+|        3 | Aerosmith                       |
+|        4 | Alanis Morissette               |
+|        5 | Alice In Chains                 |
+|        6 | Antônio Carlos Jobim            |
+|        7 | Apocalyptica                    |
+|        8 | Audioslave                      |
+|        9 | BackBeat                        |
+|       10 | Billy Cobham                    |
+|       11 | Black Label Society             |
+|       12 | Black Sabbath                   |
+|       13 | Body Count                      |
+|       14 | Bruce Dickinson                 |
+|       15 | Buddy Guy                       |
+|       16 | Caetano Veloso                  |
+|       17 | Chico Buarque                   |
+|       18 | Chico Science & Nação Zumbi     |
+|       19 | Cidade Negra                    |
+|       20 | Cláudio Zoli                    |
+|       21 | Various Artists                 |
+|       22 | Led Zeppelin                    |
+|       23 | Frank Zappa & Captain Beefheart |
+|       24 | Marcos Valle                    |
+|       25 | Milton Nascimento & Bebeto      |
++----------+---------------------------------+
+(Output limit exceeded, 25 of 275 total rows shown)
+
+
+A2) 6 artists
+
+Feedback
+There are no incorrect answers to this question as it is subjective to you. Again, this is a simple select statement to help you obtain information from a set of data. They are the foundation to almost all queries. You should be able to write this in your sleep. The only way to get comfortable writing these statements is practice writing them until it comes naturally.
+
+
+
+
+
+Q3) Run Query: Retrieve all data from the invoices table. What is the billing address for customer 31?
+
+SQL Query:
+
+Select *
+From Invoices
+where CustomerID = 31
+
+
+SQL Output:
+
++-----------+------------+---------------------+-----------------------+-------------+--------------+----------------+-------------------+-------+
+| InvoiceId | CustomerId | InvoiceDate         | BillingAddress        | BillingCity | BillingState | BillingCountry | BillingPostalCode | Total |
++-----------+------------+---------------------+-----------------------+-------------+--------------+----------------+-------------------+-------+
+|        18 |         31 | 2009-03-09 00:00:00 | 194A Chain Lake Drive | Halifax     | NS           | Canada         | B3S 1C5           |  8.91 |
+|       147 |         31 | 2010-10-14 00:00:00 | 194A Chain Lake Drive | Halifax     | NS           | Canada         | B3S 1C5           |  1.98 |
+|       170 |         31 | 2011-01-16 00:00:00 | 194A Chain Lake Drive | Halifax     | NS           | Canada         | B3S 1C5           |  3.96 |
+|       192 |         31 | 2011-04-20 00:00:00 | 194A Chain Lake Drive | Halifax     | NS           | Canada         | B3S 1C5           |  5.94 |
+|       244 |         31 | 2011-12-09 00:00:00 | 194A Chain Lake Drive | Halifax     | NS           | Canada         | B3S 1C5           |  0.99 |
+|       365 |         31 | 2013-06-01 00:00:00 | 194A Chain Lake Drive | Halifax     | NS           | Canada         | B3S 1C5           |  1.98 |
+|       376 |         31 | 2013-07-12 00:00:00 | 194A Chain Lake Drive | Halifax     | NS           | Canada         | B3S 1C5           | 13.86 |
++-----------+------------+---------------------+-----------------------+-------------+--------------+----------------+-------------------+-------+
+
+
+A3) 194A Chain Lake Drive, Halifax, NS, Canada, B3S 1C5
+
+Feedback
+194A Chain Lake Drive, Halifax, NS, CANADA B3S 1C5
+
+A simple select statement is the foundation to almost all queries. You should be able to write this in your sleep. The only way to get comfortable writing these statements is practice writing them until it comes naturally.
+
+
+
+
+
+Q4) Run Query: Return the playlist id, and name from the playlists table. How many playlists are there? Which would you classify is your favorite from this list?
+
+SQL Query:
+
+Select Playlistid,
+Name
+From Playlists;
+
+
+SQL Output:
+
++------------+----------------------------+
+| PlaylistId | Name                       |
++------------+----------------------------+
+|          1 | Music                      |
+|          2 | Movies                     |
+|          3 | TV Shows                   |
+|          4 | Audiobooks                 |
+|          5 | 90’s Music                 |
+|          6 | Audiobooks                 |
+|          7 | Movies                     |
+|          8 | Music                      |
+|          9 | Music Videos               |
+|         10 | TV Shows                   |
+|         11 | Brazilian Music            |
+|         12 | Classical                  |
+|         13 | Classical 101 - Deep Cuts  |
+|         14 | Classical 101 - Next Steps |
+|         15 | Classical 101 - The Basics |
+|         16 | Grunge                     |
+|         17 | Heavy Metal Classic        |
+|         18 | On-The-Go 1                |
++------------+----------------------------+
+
+
+A4) 18 playlists. Music.
+
+Feedback
+There are 18 playlists. We're a bit partial to the Audiobooks ourselves. :)
+
+A simple select statement is the foundation to almost all queries. You should be able to write this in your sleep. The only way to get comfortable writing these statements is practice writing them until it comes naturally.
+
+
+
+
+
+Q5) Run Query: Return the Customer Id, Invoice Date, and Billing City from the Invoices table. What city is associated with Customer ID number 42? What was the invoice date for the customer in Santiago?
+
+SQL Query:
+
+Select CustomerId,
+InvoiceDate, 
+BillingCity 
+From Invoices;
+
+
+SQL Output:
+
++------------+---------------------+---------------+
+| CustomerId | InvoiceDate         | BillingCity   |
++------------+---------------------+---------------+
+|          2 | 2009-01-01 00:00:00 | Stuttgart     |
+|          4 | 2009-01-02 00:00:00 | Oslo          |
+|          8 | 2009-01-03 00:00:00 | Brussels      |
+|         14 | 2009-01-06 00:00:00 | Edmonton      |
+|         23 | 2009-01-11 00:00:00 | Boston        |
+|         37 | 2009-01-19 00:00:00 | Frankfurt     |
+|         38 | 2009-02-01 00:00:00 | Berlin        |
+|         40 | 2009-02-01 00:00:00 | Paris         |
+|         42 | 2009-02-02 00:00:00 | Bordeaux      |
+|         46 | 2009-02-03 00:00:00 | Dublin        |
+|         52 | 2009-02-06 00:00:00 | London        |
+|          2 | 2009-02-11 00:00:00 | Stuttgart     |
+|         16 | 2009-02-19 00:00:00 | Mountain View |
+|         17 | 2009-03-04 00:00:00 | Redmond       |
+|         19 | 2009-03-04 00:00:00 | Cupertino     |
+|         21 | 2009-03-05 00:00:00 | Reno          |
+|         25 | 2009-03-06 00:00:00 | Madison       |
+|         31 | 2009-03-09 00:00:00 | Halifax       |
+|         40 | 2009-03-14 00:00:00 | Paris         |
+|         54 | 2009-03-22 00:00:00 | Edinburgh     |
+|         55 | 2009-04-04 00:00:00 | Sidney        |
+|         57 | 2009-04-04 00:00:00 | Santiago      |
+|         59 | 2009-04-05 00:00:00 | Bangalore     |
+|          4 | 2009-04-06 00:00:00 | Oslo          |
+|         10 | 2009-04-09 00:00:00 | São Paulo     |
++------------+---------------------+---------------+
+(Output limit exceeded, 25 of 412 total rows shown)
+
+
+A5)
+City -> Bordeaux
+
+Santiago -> 2009-04-04 00:00:00
+
+Feedback
+Bordeaux
+
+2009-04-04 
+
+A simple select statement is the foundation to almost all queries. You should be able to write this in your sleep. The only way to get comfortable writing these statements is practice writing them until it comes naturally.
+
+
+
+
+
+Q6) Run Query: Return the First Name, Last Name, Email, and Phone, from the Customers table. What is the telephone number for Jennifer Peterson?
+
+SQL Query:
+
+Select FirstName, 
+LastName, 
+Email, 
+Phone
+From Customers
+WHERE
+FirstName = 'Jennifer' and LastName = 'Peterson'
+
+
+SQL Output:
+
++-----------+----------+---------------------+-------------------+
+| FirstName | LastName | Email               | Phone             |
++-----------+----------+---------------------+-------------------+
+| Jennifer  | Peterson | jenniferp@rogers.ca | +1 (604) 688-2255 |
++-----------+----------+---------------------+-------------------+
+
+
+A6) +1 (604) 688-2255
+
+Feedback
+Jennifer Peterson's phone number is: +1 (604) 688-2255
+
+A simple select statement is the foundation to almost all queries. You should be able to write this in your sleep. The only way to get comfortable writing these statements is practice writing them until it comes naturally.
+
+
+
+
+
+Q7) Run Query: Return the Track Id, Genre Id, Composer, Unit Price from the Tracks table. How much do these tracks cost?
+
+SQL Query:
+
+Select TrackId, 
+GenreId, 
+Composer, 
+UnitPrice 
+From Tracks;
+
+SQL Output:
+
++---------+---------+------------------------------------------------------------------------+-----------+
+| TrackId | GenreId | Composer                                                               | UnitPrice |
++---------+---------+------------------------------------------------------------------------+-----------+
+|       1 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|       2 |       1 | None                                                                   |      0.99 |
+|       3 |       1 | F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman                    |      0.99 |
+|       4 |       1 | F. Baltes, R.A. Smith-Diesel, S. Kaufman, U. Dirkscneider & W. Hoffman |      0.99 |
+|       5 |       1 | Deaffy & R.A. Smith-Diesel                                             |      0.99 |
+|       6 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|       7 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|       8 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|       9 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|      10 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|      11 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|      12 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|      13 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|      14 |       1 | Angus Young, Malcolm Young, Brian Johnson                              |      0.99 |
+|      15 |       1 | AC/DC                                                                  |      0.99 |
+|      16 |       1 | AC/DC                                                                  |      0.99 |
+|      17 |       1 | AC/DC                                                                  |      0.99 |
+|      18 |       1 | AC/DC                                                                  |      0.99 |
+|      19 |       1 | AC/DC                                                                  |      0.99 |
+|      20 |       1 | AC/DC                                                                  |      0.99 |
+|      21 |       1 | AC/DC                                                                  |      0.99 |
+|      22 |       1 | AC/DC                                                                  |      0.99 |
+|      23 |       1 | Steven Tyler, Joe Perry, Jack Blades, Tommy Shaw                       |      0.99 |
+|      24 |       1 | Steven Tyler, Joe Perry                                                |      0.99 |
+|      25 |       1 | Steven Tyler, Joe Perry, Jim Vallance, Holly Knight                    |      0.99 |
++---------+---------+------------------------------------------------------------------------+-----------+
+(Output limit exceeded, 25 of 3503 total rows shown)
+
+
+A7) 0.99 currency units
+
+Feedback
+Notice that all the tracks listed are $0.99. 
+
+Also, notice that you were limited to 25 lines. This is because of Coursera's server storage capacity. However, depending on the size of your dataset, would you want to set a limit?
+
+
+
+
+
+Q8) Run Query: Select all the columns from the Playlist Track table and limit the results to 10 records. How might this information be used?
+
+SQL Query:
+
+Select *
+From Playlist_track 
+Limit 10;
+
+
+SQL Output:
+
++------------+---------+
+| PlaylistId | TrackId |
++------------+---------+
+|          1 |    3402 |
+|          1 |    3389 |
+|          1 |    3390 |
+|          1 |    3391 |
+|          1 |    3392 |
+|          1 |    3393 |
+|          1 |    3394 |
+|          1 |    3395 |
+|          1 |    3396 |
+|          1 |    3397 |
++------------+---------+
+
+
+A8) Returns only the first 10 rows of the table with 2 columns, PlaylistId and TrackId.
+
+Feedback
+This particular query provided 2 columns, one with playlist ID and one with track ID. By knowing your dataset, you will be able to determine how or when this particular information might be useful. 
+
+
+
+
+
+Q9) Run Query: Select all the columns from the Media Types table and limit the results to 50 records. What happened when you ran this query? Were you able to get all 50 records?
+
+SQL Query:
+
+Select *
+From Media_types
+Limit 50;
+
+
+SQL Output:
+
++-------------+-----------------------------+
+| MediaTypeId | Name                        |
++-------------+-----------------------------+
+|           1 | MPEG audio file             |
+|           2 | Protected AAC audio file    |
+|           3 | Protected MPEG-4 video file |
+|           4 | Purchased AAC audio file    |
+|           5 | AAC audio file              |
++-------------+-----------------------------+
+
+
+A9) The table only has 5 records and it shows all 5.
+
+Feedback
+Unfortunately, Coursera's code block feature limits queries to 25 lines because of server storage capacity. However, regardless of this feature it is important for you to note that 50 records would have likely been showing in a normal SQL query with a limit in the code line as seen above. (5 records are shown.) So as you work through the exercises of this course, please keep this in mind.
+
+
+
+
+
+Q10) Run Query: Select all the columns from the Albums table and limit the results to 10 records. How many columns are in the albums table? 
+What is the name of the 9th album in this list?
+
+SQL Query:
+
+Select *
+From Albums
+Limit 10;
+
+
+SQL Output:
+
++---------+---------------------------------------+----------+
+| AlbumId | Title                                 | ArtistId |
++---------+---------------------------------------+----------+
+|       1 | For Those About To Rock We Salute You |        1 |
+|       2 | Balls to the Wall                     |        2 |
+|       3 | Restless and Wild                     |        2 |
+|       4 | Let There Be Rock                     |        1 |
+|       5 | Big Ones                              |        3 |
+|       6 | Jagged Little Pill                    |        4 |
+|       7 | Facelift                              |        5 |
+|       8 | Warner 25 Anos                        |        6 |
+|       9 | Plays Metallica By Four Cellos        |        7 |
+|      10 | Audioslave                            |        8 |
++---------+---------------------------------------+----------+
+
+
+A10) 3 columns
+
+AlbumID = 9 is 'Plays Metallica By Four Cellos'
+
+Feedback
+Yes, there are only 3 columns in the albums table. 
+
+The 9th album's name is: Plays Metallica By Four Cellos, you should have been able to retrieve this by adding the limit number in the query.
