@@ -14,7 +14,7 @@ A1) It's missing comma after "TrackID", and "Name"
 
 Q2) In the ER diagram below, the infinity symbol is representing a "many" relationship and the key is representing "one". Select all the tables that have a one-to-many relationship.
 
-<img="images/ChinookDatabaseSchema-ER-Diagram.png">
+https://github.com/KevinVChin/Learn-SQL-Basics-for-Data-Science/blob/main/1-SQL_for_Data_Science/1-Module/2-Selecting_and_Retrieving_Data_with_SQL/images/ChinookDatabaseSchema-ER-Diagram.png
 
 A2)
 - Artists to Albums
