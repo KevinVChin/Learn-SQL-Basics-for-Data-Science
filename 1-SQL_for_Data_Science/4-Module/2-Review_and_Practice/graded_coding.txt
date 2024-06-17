@@ -5,10 +5,10 @@ All of the questions in this quiz refer to the open source Chinook Database. Ple
 
 https://ucde-rey.s3.amazonaws.com/DSV1015/ChinookDatabaseSchema.png
 
-<img src="images/ChinookDatabaseSchema.png">
+https://github.com/KevinVChin/Learn-SQL-Basics-for-Data-Science/blob/main/1-SQL_for_Data_Science/4-Module/2-Review_and_Practice/images/ChinookDatabaseSchema.png
 
 
-Q1) Pull a list of customer ids with the customer’s full name, and address, along with combining their city and country together. Be sure to make a space in between these two and make it UPPER CASE. (e.g. LOS ANGELES USA)
+Q1) Pull a list of customer ids with the customerâ€™s full name, and address, along with combining their city and country together. Be sure to make a space in between these two and make it UPPER CASE. (e.g. LOS ANGELES USA)
 
 SQL Query:
 
@@ -26,19 +26,19 @@ SQL Output:
 +------------+-----------------------+--------------------------------------+----------------------------+
 | CustomerId | FullName              | Address                              | CityCountry                |
 +------------+-----------------------+--------------------------------------+----------------------------+
-|          1 | Luís Gonçalves        | Av. Brigadeiro Faria Lima, 2170      | SãO JOSé DOS CAMPOS BRAZIL |
-|          2 | Leonie Köhler         | Theodor-Heuss-Straße 34              | STUTTGART GERMANY          |
-|          3 | François Tremblay     | 1498 rue Bélanger                    | MONTRéAL CANADA            |
-|          4 | Bjørn Hansen          | Ullevålsveien 14                     | OSLO NORWAY                |
-|          5 | František Wichterlová | Klanova 9/506                        | PRAGUE CZECH REPUBLIC      |
-|          6 | Helena Holý           | Rilská 3174/6                        | PRAGUE CZECH REPUBLIC      |
-|          7 | Astrid Gruber         | Rotenturmstraße 4, 1010 Innere Stadt | VIENNE AUSTRIA             |
-|          8 | Daan Peeters          | Grétrystraat 63                      | BRUSSELS BELGIUM           |
-|          9 | Kara Nielsen          | Sønder Boulevard 51                  | COPENHAGEN DENMARK         |
-|         10 | Eduardo Martins       | Rua Dr. Falcão Filho, 155            | SãO PAULO BRAZIL           |
-|         11 | Alexandre Rocha       | Av. Paulista, 2022                   | SãO PAULO BRAZIL           |
-|         12 | Roberto Almeida       | Praça Pio X, 119                     | RIO DE JANEIRO BRAZIL      |
-|         13 | Fernanda Ramos        | Qe 7 Bloco G                         | BRASíLIA BRAZIL            |
+|          1 | LuÃ­s GonÃ§alves        | Av. Brigadeiro Faria Lima, 2170      | SÃ£O JOSÃ© DOS CAMPOS BRAZIL |
+|          2 | Leonie KÃ¶hler         | Theodor-Heuss-StraÃŸe 34              | STUTTGART GERMANY          |
+|          3 | FranÃ§ois Tremblay     | 1498 rue BÃ©langer                    | MONTRÃ©AL CANADA            |
+|          4 | BjÃ¸rn Hansen          | UllevÃ¥lsveien 14                     | OSLO NORWAY                |
+|          5 | FrantiÅ¡ek WichterlovÃ¡ | Klanova 9/506                        | PRAGUE CZECH REPUBLIC      |
+|          6 | Helena HolÃ½           | RilskÃ¡ 3174/6                        | PRAGUE CZECH REPUBLIC      |
+|          7 | Astrid Gruber         | RotenturmstraÃŸe 4, 1010 Innere Stadt | VIENNE AUSTRIA             |
+|          8 | Daan Peeters          | GrÃ©trystraat 63                      | BRUSSELS BELGIUM           |
+|          9 | Kara Nielsen          | SÃ¸nder Boulevard 51                  | COPENHAGEN DENMARK         |
+|         10 | Eduardo Martins       | Rua Dr. FalcÃ£o Filho, 155            | SÃ£O PAULO BRAZIL           |
+|         11 | Alexandre Rocha       | Av. Paulista, 2022                   | SÃ£O PAULO BRAZIL           |
+|         12 | Roberto Almeida       | PraÃ§a Pio X, 119                     | RIO DE JANEIRO BRAZIL      |
+|         13 | Fernanda Ramos        | Qe 7 Bloco G                         | BRASÃ­LIA BRAZIL            |
 |         14 | Mark Philips          | 8210 111 ST NW                       | EDMONTON CANADA            |
 |         15 | Jennifer Peterson     | 700 W Pender Street                  | VANCOUVER CANADA           |
 |         16 | Frank Harris          | 1600 Amphitheatre Parkway            | MOUNTAIN VIEW USA          |
@@ -63,7 +63,7 @@ A1) MOUNTAIN VIEW USA
 
 
 
-Q2) Create a new employee user id by combining the first 4 letters of the employee’s first name with the first 2 letters of the employee’s last name. Make the new field lower case and pull each individual step to show your work.
+Q2) Create a new employee user id by combining the first 4 letters of the employeeâ€™s first name with the first 2 letters of the employeeâ€™s last name. Make the new field lower case and pull each individual step to show your work.
 
 SQL Query:
 
@@ -301,12 +301,12 @@ SQL Output:
 |            2 | Mountain View |
 |            2 | Paris         |
 |            2 | Prague        |
-|            2 | São Paulo     |
+|            2 | SÃ£o Paulo     |
 |            1 | Amsterdam     |
 |            1 | Bangalore     |
 |            1 | Bordeaux      |
 |            1 | Boston        |
-|            1 | Brasília      |
+|            1 | BrasÃ­lia      |
 |            1 | Brussels      |
 |            1 | Budapest      |
 |            1 | Buenos Aires  |
@@ -326,7 +326,7 @@ SQL Output:
 
 
 A5)
-- São Paulo
+- SÃ£o Paulo
 - Mountain View
 - London
 
@@ -334,7 +334,7 @@ A5)
 
 
 
-Q6) Create a new customer invoice id by combining a customer’s invoice id with their first and last name while ordering your query in the following order: firstname, lastname, and invoiceID.
+Q6) Create a new customer invoice id by combining a customerâ€™s invoice id with their first and last name while ordering your query in the following order: firstname, lastname, and invoiceID.
 
 SQL Query:
 
@@ -372,10 +372,10 @@ SQL Output:
 | AstridGruber296   |
 | AstridGruber318   |
 | AstridGruber370   |
-| BjørnHansen2      |
-| BjørnHansen24     |
-| BjørnHansen76     |
-| BjørnHansen197    |
+| BjÃ¸rnHansen2      |
+| BjÃ¸rnHansen24     |
+| BjÃ¸rnHansen76     |
+| BjÃ¸rnHansen197    |
 +-------------------+
 (Output limit exceeded, 25 of 412 total rows shown)
 
