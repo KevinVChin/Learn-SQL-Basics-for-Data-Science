@@ -18,7 +18,7 @@ Q3) The following diagram is a depiction of what type of join?
 
 https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/N-PGlJTnEeeRmQ5TE1Qolg_46d2d731eb8af88a9b719147019ad72f_Screen-Shot-2017-09-08-at-3.43.46-PM.png?expiry=1718582400000&hmac=VwCVIs3TblNkXySE8DRwwl56j4_l7N3yMY3li9L5jFY
 
-<img="images/Screen-Shot-2017-09-08-at-3.43.46-PM.png">
+https://github.com/KevinVChin/Learn-SQL-Basics-for-Data-Science/blob/main/1-SQL_for_Data_Science/3-Module/2-Review_and_Practice/images/Screen-Shot-2017-09-08-at-3.43.46-PM.png
 
 A3) Inner Join
 
