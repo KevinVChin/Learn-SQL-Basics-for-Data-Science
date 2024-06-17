@@ -59,7 +59,7 @@ FROM customers
 
 Q6) The ER diagram below is depicting what kind of relationship between the EMPLOYEES and CUSTOMERS tables?
 
-<img="images/ChinookDatabaseSch.png">
+<img src="images/ChinookDatabaseSch.png">
 
 A6) One-to-many
 
