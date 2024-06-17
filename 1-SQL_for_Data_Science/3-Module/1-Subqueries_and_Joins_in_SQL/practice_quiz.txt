@@ -1,0 +1,175 @@
+All of the questions in this quiz pull from the open source Chinook Database. Please refer to the ER Diagram below and familiarize yourself with the table and column names to write accurate queries and get the appropriate answers.
+
+https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/UAPENoOVEei4RQ5L9j9nDA_5042a1f0839511e8beb2b5b4ae9fa29a_ER-Diagram.png?expiry=1718582400000&hmac=yf5JGHxxAt19C6fVLgFC5soZyrgnSrE-IEEzrYmk70M
+
+<img src="images/ER-Diagram.png">
+
+
+Q1) How many albums does the artist Led Zeppelin have?
+
+SQL Query:
+
+SELECT
+    artists.Name,
+    COUNT(*)
+FROM
+    artists INNER JOIN albums ON artists.ArtistID = albums.ArtistID
+WHERE
+    artists.Name = 'Led Zeppelin'
+
+
+SQL Output:
+
++--------------+-----------+
+| Name         | count (*) |
++--------------+-----------+
+| Led Zeppelin |        14 |
++--------------+-----------+
+
+
+A1) 14
+
+
+
+
+
+Q2) Create a list of album titles and the unit prices for the artist "Audioslave".
+
+SQL Query:
+
+SELECT
+     albums.Title,
+     tracks.UnitPrice
+FROM
+     ((artists INNER JOIN albums ON artists.ArtistID = albums.ArtistID)
+     INNER JOIN 
+     tracks ON albums.AlbumID = tracks.AlbumID)
+WHERE
+    artists.Name = 'Audioslave'
+
+
+SQL Output:
+
++--------------+-----------+
+| Title        | UnitPrice |
++--------------+-----------+
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Audioslave   |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
+| Out Of Exile |      0.99 |
++--------------+-----------+
+(Output limit exceeded, 25 of 40 total rows shown)
+
+
+How many records are returned?
+
+Only 25 records will be shown in the output so please look at the bottom of the output to see how many records were retrieved.
+
+A2) 40
+
+
+
+
+
+Q3) Find the first and last name of any customer who does not have an invoice. Are there any customers returned from the query?
+
+SQL Query:
+
+SELECT
+    c.FirstName,
+    c.LastName
+FROM
+    customers c INNER JOIN invoices i ON c.Customerid = i.Customerid
+WHERE
+    i.Invoiceid IS NULL
+
+
+SQL Output:
+
++-----------+----------+
+| FirstName | LastName |
++-----------+----------+
++-----------+----------+
+(Zero rows)
+
+
+A3) No
+
+
+
+
+
+Q4) Find the total price for each album.
+
+SQL Query:
+
+SELECT
+    al.AlbumID,
+    al.Title,
+    ROUND(SUM(t.UnitPrice), 2) AS total_price
+FROM
+    albums al INNER JOIN tracks t ON al.Albumid = t.Albumid
+--WHERE
+--    al.Title = 'Big Ones'
+GROUP BY
+    al.AlbumID
+
+
+SQL Output:
+
++---------+--------------------------------------------------+-------------+
+| AlbumId | Title                                            | total_price |
++---------+--------------------------------------------------+-------------+
+|       1 | For Those About To Rock We Salute You            |         9.9 |
+|       2 | Balls to the Wall                                |        0.99 |
+|       3 | Restless and Wild                                |        2.97 |
+|       4 | Let There Be Rock                                |        7.92 |
+|       5 | Big Ones                                         |       14.85 |
+|       6 | Jagged Little Pill                               |       12.87 |
+|       7 | Facelift                                         |       11.88 |
+|       8 | Warner 25 Anos                                   |       13.86 |
+|       9 | Plays Metallica By Four Cellos                   |        7.92 |
+|      10 | Audioslave                                       |       13.86 |
+|      11 | Out Of Exile                                     |       11.88 |
+|      12 | BackBeat Soundtrack                              |       11.88 |
+|      13 | The Best Of Billy Cobham                         |        7.92 |
+|      14 | Alcohol Fueled Brewtality Live! [Disc 1]         |       12.87 |
+|      15 | Alcohol Fueled Brewtality Live! [Disc 2]         |        4.95 |
+|      16 | Black Sabbath                                    |        6.93 |
+|      17 | Black Sabbath Vol. 4 (Remaster)                  |         9.9 |
+|      18 | Body Count                                       |       16.83 |
+|      19 | Chemical Wedding                                 |       10.89 |
+|      20 | The Best Of Buddy Guy - The Millenium Collection |       10.89 |
+|      21 | Prenda Minha                                     |       17.82 |
+|      22 | Sozinho Remix Ao Vivo                            |        2.97 |
+|      23 | Minha Historia                                   |       33.66 |
+|      24 | Afrociberdelia                                   |       22.77 |
+|      25 | Da Lama Ao Caos                                  |       12.87 |
++---------+--------------------------------------------------+-------------+
+(Output limit exceeded, 25 of 347 total rows shown)
+
+
+What is the total price for the album “Big Ones”?
+
+Q4) 14.85
