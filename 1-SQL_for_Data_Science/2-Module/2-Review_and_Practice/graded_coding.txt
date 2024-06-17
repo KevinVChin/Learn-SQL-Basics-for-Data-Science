@@ -1,0 +1,395 @@
+All of the questions in this quiz refer to the open source Chinook Database. Please familiarize yourself with the ER diagram to familiarize yourself with the table and column names to write accurate queries and get the appropriate answers.
+
+https://ucde-rey.s3.amazonaws.com/DSV1015/ChinookDatabaseSchema.png
+
+<img="images/ChinookDatabaseSchema.png">
+
+
+Q1) Run Query: Find all the tracks that have a length of 5,000,000 milliseconds or more.
+
+SQL Query:
+
+SELECT
+    *
+FROM
+    Tracks
+WHERE
+    Milliseconds >= 5000000
+
+
+SQL Output:
+
++---------+-------------------------+---------+-------------+---------+----------+--------------+------------+-----------+
+| TrackId | Name                    | AlbumId | MediaTypeId | GenreId | Composer | Milliseconds |      Bytes | UnitPrice |
++---------+-------------------------+---------+-------------+---------+----------+--------------+------------+-----------+
+|    2820 | Occupation / Precipice  |     227 |           3 |      19 |     None |      5286953 | 1054423946 |      1.99 |
+|    3224 | Through a Looking Glass |     229 |           3 |      21 |     None |      5088838 | 1059546140 |      1.99 |
++---------+-------------------------+---------+-------------+---------+----------+--------------+------------+-----------+
+
+
+How many tracks are returned?
+
+A1) 2
+
+
+
+
+
+Q2) Run Query: Find all the invoices whose total is between $5 and $15 dollars.
+
+SQL Query:
+
+SELECT
+    *
+FROM
+    Invoices
+WHERE
+    Total BETWEEN 5 AND 15
+
+
+SQL Output:
+
++-----------+------------+---------------------+---------------------------+-------------+--------------+----------------+-------------------+-------+
+| InvoiceId | CustomerId | InvoiceDate         | BillingAddress            | BillingCity | BillingState | BillingCountry | BillingPostalCode | Total |
++-----------+------------+---------------------+---------------------------+-------------+--------------+----------------+-------------------+-------+
+|         3 |          8 | 2009-01-03 00:00:00 | Grétrystraat 63           | Brussels    |         None | Belgium        | 1000              |  5.94 |
+|         4 |         14 | 2009-01-06 00:00:00 | 8210 111 ST NW            | Edmonton    |           AB | Canada         | T6G 2C7           |  8.91 |
+|         5 |         23 | 2009-01-11 00:00:00 | 69 Salem Street           | Boston      |           MA | USA            | 2113              | 13.86 |
+|        10 |         46 | 2009-02-03 00:00:00 | 3 Chatham Street          | Dublin      |       Dublin | Ireland        | None              |  5.94 |
+|        11 |         52 | 2009-02-06 00:00:00 | 202 Hoxton Street         | London      |         None | United Kingdom | N1 5LH            |  8.91 |
+|        12 |          2 | 2009-02-11 00:00:00 | Theodor-Heuss-Straße 34   | Stuttgart   |         None | Germany        | 70174             | 13.86 |
+|        17 |         25 | 2009-03-06 00:00:00 | 319 N. Frances Street     | Madison     |           WI | USA            | 53703             |  5.94 |
+|        18 |         31 | 2009-03-09 00:00:00 | 194A Chain Lake Drive     | Halifax     |           NS | Canada         | B3S 1C5           |  8.91 |
+|        19 |         40 | 2009-03-14 00:00:00 | 8, Rue Hanovre            | Paris       |         None | France         | 75002             | 13.86 |
+|        24 |          4 | 2009-04-06 00:00:00 | Ullevålsveien 14          | Oslo        |         None | Norway         | 0171              |  5.94 |
+|        25 |         10 | 2009-04-09 00:00:00 | Rua Dr. Falcão Filho, 155 | São Paulo   |           SP | Brazil         | 01007-010         |  8.91 |
+|        26 |         19 | 2009-04-14 00:00:00 | 1 Infinite Loop           | Cupertino   |           CA | USA            | 95014             | 13.86 |
+|        31 |         42 | 2009-05-07 00:00:00 | 9, Place Louis Barthou    | Bordeaux    |         None | France         | 33000             |  5.94 |
+|        32 |         48 | 2009-05-10 00:00:00 | Lijnbaansgracht 120bg     | Amsterdam   |           VV | Netherlands    | 1016              |  8.91 |
+|        33 |         57 | 2009-05-15 00:00:00 | Calle Lira, 198           | Santiago    |         None | Chile          | None              | 13.86 |
+|        38 |         21 | 2009-06-07 00:00:00 | 801 W 4th Street          | Reno        |           NV | USA            | 89503             |  5.94 |
+|        39 |         27 | 2009-06-10 00:00:00 | 1033 N Park Ave           | Tucson      |           AZ | USA            | 85719             |  8.91 |
+|        40 |         36 | 2009-06-15 00:00:00 | Tauentzienstraße 8        | Berlin      |         None | Germany        | 10789             | 13.86 |
+|        45 |         59 | 2009-07-08 00:00:00 | 3,Raj Bhavan Road         | Bangalore   |         None | India          | 560001            |  5.94 |
+|        46 |          6 | 2009-07-11 00:00:00 | Rilská 3174/6             | Prague      |         None | Czech Republic | 14300             |  8.91 |
+|        47 |         15 | 2009-07-16 00:00:00 | 700 W Pender Street       | Vancouver   |           BC | Canada         | V6C 1G8           | 13.86 |
+|        52 |         38 | 2009-08-08 00:00:00 | Barbarossastraße 19       | Berlin      |         None | Germany        | 10779             |  5.94 |
+|        53 |         44 | 2009-08-11 00:00:00 | Porthaninkatu 9           | Helsinki    |         None | Finland        | 00530             |  8.91 |
+|        54 |         53 | 2009-08-16 00:00:00 | 113 Lupus St              | London      |         None | United Kingdom | SW1V 3EN          | 13.86 |
+|        59 |         17 | 2009-09-08 00:00:00 | 1 Microsoft Way           | Redmond     |           WA | USA            | 98052-8300        |  5.94 |
++-----------+------------+---------------------+---------------------------+-------------+--------------+----------------+-------------------+-------+
+(Output limit exceeded, 25 of 168 total rows shown)
+
+
+While the query in this example is limited to 10 records, running the query correctly will indicate how many total records there are - enter that number below.
+
+A2) 168
+
+
+
+
+
+Q3) Run Query: Find all the customers from the following States: RJ, DF, AB, BC, CA, WA, NY.
+
+SQL Query:
+
+SELECT
+    *
+FROM
+    Customers
+WHERE
+    State IN ('RJ', 'DF', 'AB', 'BC', 'CA', 'WA', 'NY')
+
+
+SQL Output:
+
++------------+-----------+----------+-----------------------+---------------------------+----------------+-------+---------+------------+--------------------+--------------------+-------------------------------+--------------+
+| CustomerId | FirstName | LastName | Company               | Address                   | City           | State | Country | PostalCode | Phone              | Fax                | Email                         | SupportRepId |
++------------+-----------+----------+-----------------------+---------------------------+----------------+-------+---------+------------+--------------------+--------------------+-------------------------------+--------------+
+|         12 | Roberto   | Almeida  | Riotur                | Praça Pio X, 119          | Rio de Janeiro | RJ    | Brazil  | 20040-020  | +55 (21) 2271-7000 | +55 (21) 2271-7070 | roberto.almeida@riotur.gov.br |            3 |
+|         13 | Fernanda  | Ramos    | None                  | Qe 7 Bloco G              | Brasília       | DF    | Brazil  | 71020-677  | +55 (61) 3363-5547 | +55 (61) 3363-7855 | fernadaramos4@uol.com.br      |            4 |
+|         14 | Mark      | Philips  | Telus                 | 8210 111 ST NW            | Edmonton       | AB    | Canada  | T6G 2C7    | +1 (780) 434-4554  | +1 (780) 434-5565  | mphilips12@shaw.ca            |            5 |
+|         15 | Jennifer  | Peterson | Rogers Canada         | 700 W Pender Street       | Vancouver      | BC    | Canada  | V6C 1G8    | +1 (604) 688-2255  | +1 (604) 688-8756  | jenniferp@rogers.ca           |            3 |
+|         16 | Frank     | Harris   | Google Inc.           | 1600 Amphitheatre Parkway | Mountain View  | CA    | USA     | 94043-1351 | +1 (650) 253-0000  | +1 (650) 253-0000  | fharris@google.com            |            4 |
+|         17 | Jack      | Smith    | Microsoft Corporation | 1 Microsoft Way           | Redmond        | WA    | USA     | 98052-8300 | +1 (425) 882-8080  | +1 (425) 882-8081  | jacksmith@microsoft.com       |            5 |
+|         18 | Michelle  | Brooks   | None                  | 627 Broadway              | New York       | NY    | USA     | 10012-2612 | +1 (212) 221-3546  | +1 (212) 221-4679  | michelleb@aol.com             |            3 |
+|         19 | Tim       | Goyer    | Apple Inc.            | 1 Infinite Loop           | Cupertino      | CA    | USA     | 95014      | +1 (408) 996-1010  | +1 (408) 996-1011  | tgoyer@apple.com              |            3 |
+|         20 | Dan       | Miller   | None                  | 541 Del Medio Avenue      | Mountain View  | CA    | USA     | 94040-111  | +1 (650) 644-3358  | None               | dmiller@comcast.com           |            4 |
++------------+-----------+----------+-----------------------+---------------------------+----------------+-------+---------+------------+--------------------+--------------------+-------------------------------+--------------+
+
+
+What company does Jack Smith work for?
+
+A3) Microsoft Corp
+
+
+
+
+
+Q4) Run Query: Find all the invoices for customer 56 and 58 where the total was between $1.00 and $5.00.
+
+SQL Query:
+
+SELECT
+    *
+FROM
+    Invoices
+WHERE
+    (CustomerID IN ('56', '58')) AND (Total BETWEEN '1.00' AND '5.00')
+
+
+SQL Output:
+
++-----------+------------+---------------------+---------------------+--------------+--------------+----------------+-------------------+-------+
+| InvoiceId | CustomerId | InvoiceDate         | BillingAddress      | BillingCity  | BillingState | BillingCountry | BillingPostalCode | Total |
++-----------+------------+---------------------+---------------------+--------------+--------------+----------------+-------------------+-------+
+|       119 |         56 | 2010-06-12 00:00:00 | 307 Macacha Güemes  | Buenos Aires |         None | Argentina      | 1106              |  1.98 |
+|       142 |         56 | 2010-09-14 00:00:00 | 307 Macacha Güemes  | Buenos Aires |         None | Argentina      | 1106              |  3.96 |
+|       337 |         56 | 2013-01-28 00:00:00 | 307 Macacha Güemes  | Buenos Aires |         None | Argentina      | 1106              |  1.98 |
+|       120 |         58 | 2010-06-12 00:00:00 | 12,Community Centre | Delhi        |         None | India          | 110017            |  1.98 |
+|       315 |         58 | 2012-10-27 00:00:00 | 12,Community Centre | Delhi        |         None | India          | 110017            |  1.98 |
+|       338 |         58 | 2013-01-29 00:00:00 | 12,Community Centre | Delhi        |         None | India          | 110017            |  3.96 |
+|       412 |         58 | 2013-12-22 00:00:00 | 12,Community Centre | Delhi        |         None | India          | 110017            |  1.99 |
++-----------+------------+---------------------+---------------------+--------------+--------------+----------------+-------------------+-------+
+
+
+What was the invoice date for invoice ID 315?
+
+A4) 10-27-2012
+
+
+
+
+
+Q5) Run Query: Find all the tracks whose name starts with 'All'.
+
+SQL Query:
+
+SELECT
+    *
+FROM
+    Tracks
+WHERE
+    name LIKE 'All%'
+
+
+SQL Output:
+
++---------+----------------------------------------+---------+-------------+---------+--------------------------------------------------+--------------+-----------+-----------+
+| TrackId | Name                                   | AlbumId | MediaTypeId | GenreId | Composer                                         | Milliseconds |     Bytes | UnitPrice |
++---------+----------------------------------------+---------+-------------+---------+--------------------------------------------------+--------------+-----------+-----------+
+|      38 | All I Really Want                      |       6 |           1 |       1 | Alanis Morissette & Glenn Ballard                |       284891 |   9375567 |      0.99 |
+|     134 | All For You                            |      14 |           1 |       3 | None                                             |       235833 |   7726948 |      0.99 |
+|     385 | All Star                               |      33 |           1 |       7 | Nando Reis                                       |       176326 |   5891697 |      0.99 |
+|    1009 | All My Life                            |      81 |           1 |       4 | Foo Fighters                                     |       263653 |   8665545 |      0.99 |
+|    1608 | All My Love                            |     130 |           1 |       1 | Robert Plant & John Paul Jones                   |       356284 |  11684862 |      0.99 |
+|    1892 | All Within My Hands                    |     155 |           1 |       3 | Bob Rock/James Hetfield/Kirk Hammett/Lars Ulrich |       527986 |  17162741 |      0.99 |
+|    2192 | All or None                            |     180 |           1 |       1 | Stone Gossard                                    |       277655 |   9104728 |      0.99 |
+|    2274 | All Dead, All Dead                     |     186 |           1 |       1 | May                                              |       190119 |   6144878 |      0.99 |
+|    2888 | All the Best Cowboys Have Daddy Issues |     230 |           3 |      19 | None                                             |      2555492 | 211743651 |      1.99 |
+|    2969 | All Because Of You                     |     235 |           1 |       1 | Adam Clayton, Bono, Larry Mullen & The Edge      |       219141 |   7198014 |      0.99 |
+|    2991 | All Along The Watchtower               |     237 |           1 |       1 | Dylan, Bob                                       |       264568 |   8623572 |      0.99 |
+|    3003 | All I Want Is You                      |     237 |           1 |       1 | Bono/Clayton, Adam/Mullen Jr., Larry/The Edge    |       390243 |  12729820 |      0.99 |
+|    3017 | All I Want Is You                      |     238 |           1 |       1 | U2 & Van Dyke Parks                              |       591986 |  19202252 |      0.99 |
+|    3316 | All My Love                            |     258 |           1 |      17 | E. Schrody/L. Dimant                             |       200620 |   8027065 |      0.99 |
+|    3374 | All Night Thing                        |     269 |           2 |      23 | None                                             |       231803 |   3997982 |      0.99 |
++---------+----------------------------------------+---------+-------------+---------+--------------------------------------------------+--------------+-----------+-----------+
+
+
+While only 10 records are shown, the query will indicate how many total records there are for this query - enter that number below.
+
+A5) 15
+
+
+
+
+
+Q6) Run Query: Find all the customer emails that start with "J" and are from gmail.com.
+
+SQL Query:
+
+SELECT
+    *
+FROM
+    Customers
+WHERE
+    Email LIKE 'J%' AND Email LIKE '%gmail.com'
+
+
+SQL Output:
+
++------------+-----------+----------+---------+-------------+----------------+-------+---------+------------+-------------------+------+---------------------+--------------+
+| CustomerId | FirstName | LastName | Company | Address     | City           | State | Country | PostalCode | Phone             |  Fax | Email               | SupportRepId |
++------------+-----------+----------+---------+-------------+----------------+-------+---------+------------+-------------------+------+---------------------+--------------+
+|         28 | Julia     | Barnett  |    None | 302 S 700 E | Salt Lake City | UT    | USA     | 84102      | +1 (801) 531-7272 | None | jubarnett@gmail.com |            5 |
++------------+-----------+----------+---------+-------------+----------------+-------+---------+------------+-------------------+------+---------------------+--------------+
+
+
+Enter the one email address returned (you will likely need to scroll to the right) below.
+
+A6) jubarnett@gmail.com
+
+
+
+
+
+Q7) Run Query: Find all the invoices from the billing city Brasília, Edmonton, and Vancouver and sort in descending order by invoice ID.
+
+SQL Query:
+
+SELECT
+    *
+FROM
+    Invoices
+WHERE
+    BillingCity IN ('Brasília', 'Edmonton', 'Vancouver')
+ORDER BY
+    InvoiceID DESC
+
+
+SQL Output:
+
++-----------+------------+---------------------+---------------------+-------------+--------------+----------------+-------------------+-------+
+| InvoiceId | CustomerId | InvoiceDate         | BillingAddress      | BillingCity | BillingState | BillingCountry | BillingPostalCode | Total |
++-----------+------------+---------------------+---------------------+-------------+--------------+----------------+-------------------+-------+
+|       362 |         14 | 2013-05-11 00:00:00 | 8210 111 ST NW      | Edmonton    | AB           | Canada         | T6G 2C7           | 13.86 |
+|       351 |         14 | 2013-03-31 00:00:00 | 8210 111 ST NW      | Edmonton    | AB           | Canada         | T6G 2C7           |  1.98 |
+|       328 |         15 | 2012-12-15 00:00:00 | 700 W Pender Street | Vancouver   | BC           | Canada         | V6C 1G8           |  0.99 |
+|       319 |         13 | 2012-11-01 00:00:00 | Qe 7 Bloco G        | Brasília    | DF           | Brazil         | 71020-677         |  8.91 |
+|       276 |         15 | 2012-04-26 00:00:00 | 700 W Pender Street | Vancouver   | BC           | Canada         | V6C 1G8           |  5.94 |
+|       264 |         13 | 2012-03-03 00:00:00 | Qe 7 Bloco G        | Brasília    | DF           | Brazil         | 71020-677         | 13.86 |
+|       254 |         15 | 2012-01-23 00:00:00 | 700 W Pender Street | Vancouver   | BC           | Canada         | V6C 1G8           |  3.96 |
+|       253 |         13 | 2012-01-22 00:00:00 | Qe 7 Bloco G        | Brasília    | DF           | Brazil         | 71020-677         |  1.98 |
+|       231 |         15 | 2011-10-21 00:00:00 | 700 W Pender Street | Vancouver   | BC           | Canada         | V6C 1G8           |  1.98 |
+|       230 |         14 | 2011-10-08 00:00:00 | 8210 111 ST NW      | Edmonton    | AB           | Canada         | T6G 2C7           |  0.99 |
+|       178 |         14 | 2011-02-17 00:00:00 | 8210 111 ST NW      | Edmonton    | AB           | Canada         | T6G 2C7           |  5.94 |
+|       156 |         14 | 2010-11-15 00:00:00 | 8210 111 ST NW      | Edmonton    | AB           | Canada         | T6G 2C7           |  3.96 |
+|       133 |         14 | 2010-08-13 00:00:00 | 8210 111 ST NW      | Edmonton    | AB           | Canada         | T6G 2C7           |  1.98 |
+|       132 |         13 | 2010-07-31 00:00:00 | Qe 7 Bloco G        | Brasília    | DF           | Brazil         | 71020-677         |  0.99 |
+|       102 |         15 | 2010-03-16 00:00:00 | 700 W Pender Street | Vancouver   | BC           | Canada         | V6C 1G8           |  9.91 |
+|        80 |         13 | 2009-12-10 00:00:00 | Qe 7 Bloco G        | Brasília    | DF           | Brazil         | 71020-677         |  5.94 |
+|        58 |         13 | 2009-09-07 00:00:00 | Qe 7 Bloco G        | Brasília    | DF           | Brazil         | 71020-677         |  3.96 |
+|        47 |         15 | 2009-07-16 00:00:00 | 700 W Pender Street | Vancouver   | BC           | Canada         | V6C 1G8           | 13.86 |
+|        36 |         15 | 2009-06-05 00:00:00 | 700 W Pender Street | Vancouver   | BC           | Canada         | V6C 1G8           |  1.98 |
+|        35 |         13 | 2009-06-05 00:00:00 | Qe 7 Bloco G        | Brasília    | DF           | Brazil         | 71020-677         |  1.98 |
+|         4 |         14 | 2009-01-06 00:00:00 | 8210 111 ST NW      | Edmonton    | AB           | Canada         | T6G 2C7           |  8.91 |
++-----------+------------+---------------------+---------------------+-------------+--------------+----------------+-------------------+-------+
+
+
+What is the total invoice amount of the first record returned? Enter the number below without a $ sign. Remember to sort in descending order to get the correct answer.
+
+A7) 13.86
+
+
+
+
+
+Q8) Run Query: Show the number of orders placed by each customer (hint: this is found in the invoices table) and sort the result by the number of orders in descending order.
+
+SQL Query:
+
+SELECT
+    distinct(CustomerID) AS DistinctCustomerID,
+    COUNT(InvoiceID)
+FROM
+    Invoices
+GROUP BY
+    DistinctCustomerID
+ORDER BY
+    DistinctCustomerID DESC
+
+
+SQL Output:
+
++--------------------+------------------+
+| DistinctCustomerID | count(InvoiceID) |
++--------------------+------------------+
+|                 59 |                6 |
+|                 58 |                7 |
+|                 57 |                7 |
+|                 56 |                7 |
+|                 55 |                7 |
+|                 54 |                7 |
+|                 53 |                7 |
+|                 52 |                7 |
+|                 51 |                7 |
+|                 50 |                7 |
+|                 49 |                7 |
+|                 48 |                7 |
+|                 47 |                7 |
+|                 46 |                7 |
+|                 45 |                7 |
+|                 44 |                7 |
+|                 43 |                7 |
+|                 42 |                7 |
+|                 41 |                7 |
+|                 40 |                7 |
+|                 39 |                7 |
+|                 38 |                7 |
+|                 37 |                7 |
+|                 36 |                7 |
+|                 35 |                7 |
++--------------------+------------------+
+(Output limit exceeded, 25 of 59 total rows shown)
+
+
+What is the number of items placed for the 8th person on this list? Enter that number below.
+
+A8) 7
+
+
+
+
+
+Q9) Run Query: Find the albums with 12 or more tracks.
+
+SQL Query:
+
+SELECT
+    Name,
+    COUNT(AlbumID) AS NumTracks
+FROM
+    Tracks
+GROUP BY
+    AlbumID
+HAVING
+    NumTracks >= 12
+
+
+SQL Output:
+
++-------------------------------+-----------+
+| Name                          | NumTracks |
++-------------------------------+-----------+
+| Livin' On The Edge            |        15 |
+| You Oughta Know (Alternate)   |        13 |
+| Real Thing                    |        12 |
+| Canta, Canta Mais             |        14 |
+| The Last Remaining Light      |        14 |
+| The Curse                     |        12 |
+| 20 Flight Rock                |        12 |
+| The Begining... At Last       |        13 |
+| Freedom Of Speech             |        17 |
+| Vida Boa                      |        18 |
+| Alegria, Alegria              |        34 |
+| Maracatu Atômico [Trip Hop]   |        23 |
+| Computadores Fazem Arte       |        13 |
+| A Cor Do Sol                  |        17 |
+| Eu Também Quero Beijar        |        14 |
+| Latinha de Cerveja            |        14 |
+| How Many More Times           |        14 |
+| Sao Lucas 2001                |        14 |
+| Sambassim (dj patife remix)   |        17 |
+| Só Tinha De Ser Com Você      |        17 |
+| One Vision                    |        17 |
+| God Gave Rock 'n' Roll To You |        20 |
+| Best Thing                    |        12 |
+| Macy's Day Parade             |        21 |
+| Wherever You May Go           |        12 |
++-------------------------------+-----------+
+(Output limit exceeded, 25 of 158 total rows shown)
+
+
+While the number of records returned is limited to 10, the query, if run correctly, will indicate how many total records there are. Enter that number below.
+
+A9) 158
