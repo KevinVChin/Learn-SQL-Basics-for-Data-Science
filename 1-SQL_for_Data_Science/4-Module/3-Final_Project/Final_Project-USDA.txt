@@ -1,0 +1,418 @@
+Scenario: 
+
+Data Scientist at USDA (United States Department of Agriculture)
+
+Context: 
+
+You are a Data Scientist working at the USDA. Your department has been tracking the production of various agricultural commodities across different states. 
+
+Your datasets include:
+
+`milk_production`, `cheese_production`, `coffee_production`, `honey_production`, `yogurt_production`, and a `state_lookup` table. 
+
+The data spans multiple years and states, with varying levels of production for each commodity.
+
+Your manager has requested that you generate insights from this data to aid in future planning and decision-making. You'll need to use SQL queries to answer the questions that come up in meetings, reports, or strategic discussions.
+
+Objectives:
+
+Assess state-by-state production for each commodity.
+
+Identify trends or anomalies.
+
+Offer data-backed suggestions for areas that may need more attention.
+
+
+NOTE: All answer entries are numeric and only numbers and periods. The autograder does not accept commas for the final project.
+
+
+
+Q1) Can you find out the total milk production for 2023? Your manager wants this information for the yearly report.
+
+What is the total milk production for 2023?
+
+SQL Query:
+
+-- 1
+SELECT
+	State_ANSI,
+	SUM(Value) AS TotalMilk
+FROM
+	milk_production
+WHERE
+	Year = 2023;
+
+
+SQL Output:
+
+State_ANSI|TotalMilk  |
+----------+-----------+
+         4|91812000000|
+
+
+A1) 91812000000
+
+
+
+
+
+Q2) Which states had cheese production greater than 100 million in April 2023? The Cheese Department wants to focus their marketing efforts there. 
+
+How many states are there?
+
+SQL Query:
+
+-- 2
+SELECT
+	State_ANSI,
+	SUM(Value) AS TotalCheese
+FROM
+	cheese_production
+WHERE 
+	YEAR = 2023 AND Period = 'APR'
+GROUP BY 
+	State_ANSI
+HAVING
+	TotalCheese >= 100000000;
+
+
+SQL Output:
+
+State_ANSI|TotalCheese|
+----------+-----------+
+         6|  208807000|
+        55|  289699000|
+          |  215206000|
+
+
+A2) 2
+
+
+
+
+
+Q3) Your manager wants to know how coffee production has changed over the years. 
+
+What is the total value of coffee production for 2011?
+
+SQL Query:
+
+-- 3
+SELECT 
+	Year,
+	SUM(Value) AS TotalCoffee
+FROM
+	coffee_production
+WHERE
+	Year = 2011;
+
+
+SQL Output:
+
+Year|TotalCoffee|
+----+-----------+
+2011|    7600000|
+
+
+A3) 7600000
+
+
+
+
+
+Q4) There's a meeting with the Honey Council next week. Find the average honey production for 2022 so you're prepared.
+
+SQL Query:
+
+-- 4
+SELECT
+	Year,
+	AVG(Value) AS AvgHoney
+FROM 
+	honey_production
+WHERE 
+	Year = 2022;
+
+
+SQL Output:
+
+Year|AvgHoney |
+----+---------+
+2022|3133275.0|
+
+
+A4) 3133275
+
+
+
+
+
+Q5) The State Relations team wants a list of all states names with their corresponding ANSI codes. Can you generate that list?
+
+What is the State_ANSI code for Florida?
+
+SQL Query:
+
+-- 5
+SELECT
+	State,
+	State_ANSI
+FROM
+	state_lookup
+WHERE 
+	State = 'FLORIDA';
+
+
+SQL Output:
+
+State  |State_ANSI|
+-------+----------+
+FLORIDA|        12|
+
+
+A5) 12
+
+
+
+
+
+Q6) For a cross-commodity report, can you list all states with their cheese production values, even if they didn't produce any cheese in April of 2023?
+
+What is the total for NEW JERSEY?
+
+SQL Query:
+
+-- 6 NO JOIN
+SELECT
+	Year,
+	State_ANSI,
+	Value AS TotalStateCheese
+FROM 
+	cheese_production
+WHERE
+	Year = 2023 AND Period = 'APR'
+GROUP BY 
+	State_ANSI;
+
+-- 6 JOIN SHOW STATE
+SELECT
+	cp.Year,
+	cp.State_ANSI,
+	sl.State,
+	cp.Value AS TotalStateCheese
+FROM 
+	cheese_production cp LEFT JOIN state_lookup sl ON cp.State_ANSI = sl.State_ANSI
+WHERE
+	cp.Year = 2023 AND Period = 'APR'-- AND sl.State = 'NEW JERSEY'
+GROUP BY 
+	cp.State_ANSI;
+
+
+SQL Output:
+
+Year|State_ANSI|State       |TotalStateCheese|
+----+----------+------------+----------------+
+2023|         6|CALIFORNIA  |208807000       |
+2023|        16|IDAHO       |86452000        |
+2023|        17|ILLINOIS    |5068000         |
+2023|        19|IOWA        |31512000        |
+2023|        27|MINNESOTA   |69728000        |
+2023|        34|NEW JERSEY  |4889000         |
+2023|        35|NEW MEXICO  |79038000        |
+2023|        36|NEW YORK    |66256000        |
+2023|        39|OHIO        |20510000        |
+2023|        42|PENNSYLVANIA|39420000        |
+2023|        46|SOUTH DAKOTA|43253000        |
+2023|        50|VERMONT     |11279000        |
+2023|        55|WISCONSIN   |289699000       |
+2023|          |            |215206000       |
+
+
+A6) 4889000
+
+
+
+
+
+Q7) Can you find the total yogurt production for states in the year 2022 which also have cheese production data from 2023? This will help the Dairy Division in their planning.
+
+SQL Query:
+
+-- 7 SUBQUERY
+SELECT 
+	Year,
+	State_ANSI,
+	SUM(Value) AS TotalYogurt
+FROM
+	yogurt_production
+WHERE 
+	Year = 2022 AND State_ANSI IN (
+		SELECT
+			State_ANSI
+		FROM 
+			cheese_production
+		WHERE 
+			Year = 2023 AND Value IS NOT NULL
+		);
+
+-- 7 JOIN
+SELECT
+	yp.Year,
+	yp.State_ANSI,
+	SUM(DISTINCT yp.Value) AS TotalYogurt
+FROM
+	yogurt_production yp INNER JOIN cheese_production cp ON yp.State_ANSI = cp.State_ANSI 
+WHERE
+	yp.Year = 2022 AND cp.Year = 2023 AND cp.Value IS NOT NULL;
+
+
+A7) 1171095000
+
+
+
+
+
+Q8) List all states from state_lookup that are missing from milk_production in 2023.
+
+How many states are there?
+
+SQL Query:
+
+-- 8 SUBQUERY
+SELECT
+	*
+FROM
+	state_lookup sl
+WHERE
+	sl.State_ANSI NOT IN (
+    	SELECT
+    		mp.State_ANSI
+    	FROM
+    		milk_production mp
+    	WHERE
+    		Year = 2023
+    	);
+
+-- 8 JOIN
+SELECT
+	DISTINCT sl.*
+FROM
+	state_lookup sl LEFT JOIN milk_production mp ON sl.State_ANSI = mp.State_ANSI
+WHERE
+	sl.State_ANSI NOT IN (
+		SELECT
+			State_ANSI
+		FROM
+			milk_production
+		WHERE
+			Year = 2023
+		);
+
+
+SQL Output:
+
+State         |State_ANSI|
+--------------+----------+
+ALABAMA       |         1|
+ALASKA        |         2|
+ARKANSAS      |         5|
+CONNECTICUT   |         9|
+DELAWARE      |        10|
+HAWAII        |        15|
+KENTUCKY      |        21|
+LOUISIANA     |        22|
+MAINE         |        23|
+MARYLAND      |        24|
+MASSACHUSETTS |        25|
+MISSISSIPPI   |        28|
+MISSOURI      |        29|
+MONTANA       |        30|
+NEBRASKA      |        31|
+NEVADA        |        32|
+NEW HAMPSHIRE |        33|
+NEW JERSEY    |        34|
+NORTH CAROLINA|        37|
+NORTH DAKOTA  |        38|
+OKLAHOMA      |        40|
+RHODE ISLAND  |        44|
+SOUTH CAROLINA|        45|
+TENNESSEE     |        47|
+WEST VIRGINIA |        54|
+WYOMING       |        56|
+
+
+A8) 26
+
+
+
+
+
+Q9) List all states with their cheese production values, including states that didn't produce any cheese in April 2023.
+
+Did Delaware produce any cheese in April 2023?
+
+SQL Query:
+
+-- 9
+SELECT 
+	cp.State_ANSI,
+	sl.State,
+	cp.Value AS TotalStateCheese
+FROM 
+	cheese_production cp INNER JOIN state_lookup sl ON cp.State_ANSI = sl.State_ANSI 
+WHERE
+	cp.Year = 2023 AND Period = 'APR';
+
+
+SQL Output:
+
+State_ANSI|State       |TotalStateCheese|
+----------+------------+----------------+
+         6|CALIFORNIA  |208807000       |
+        16|IDAHO       |86452000        |
+        17|ILLINOIS    |5068000         |
+        19|IOWA        |31512000        |
+        27|MINNESOTA   |69728000        |
+        34|NEW JERSEY  |4889000         |
+        35|NEW MEXICO  |79038000        |
+        36|NEW YORK    |66256000        |
+        39|OHIO        |20510000        |
+        42|PENNSYLVANIA|39420000        |
+        46|SOUTH DAKOTA|43253000        |
+        50|VERMONT     |11279000        |
+        55|WISCONSIN   |289699000       |
+
+
+A9) No
+
+
+
+
+
+Q10) Find the average coffee production for all years where the honey production exceeded 1 million.
+
+SQL Query:
+
+-- 10
+SELECT 
+	AVG(cp.Value) AS AvgCoffeeProduction
+FROM 
+	coffee_production cp 
+WHERE cp.Year IN (
+	SELECT 
+		DISTINCT Year
+	FROM 
+		honey_production
+	WHERE 
+		Value > 1000000
+	);
+
+
+SQL Output:
+
+AvgCoffeeProduction|
+-------------------+
+  6426666.666666667|
+
+
+A10) 6426666.666666667
